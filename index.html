@@ -872,8 +872,8 @@ background-color: rgb(21, 26, 27);
   margin-top: 8.5rem;
      justify-content: center;
      width: 100%;
-     padding-left: 5px;
-     padding-right: 5px;
+     padding-right: 0.5rem;
+    padding-left: 0.5rem;
      
  }
  
@@ -980,8 +980,8 @@ background-color: rgb(21, 26, 27);
      flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 
 
  }
@@ -1080,7 +1080,7 @@ height: 7rem;
         </nav>
       </header>
   
-      <div class="search-container">
+      <div id="search-container" class="search-container">
         <input id="input_user" type="text" placeholder="Search...">
         <button
          type="submit"><i class="fa fa-search"></i></button>
@@ -1126,34 +1126,32 @@ height: 7rem;
     
     
 
-    <script>
-       let login_card_div=document.getElementById("login-card-div")
-const button=document.getElementById("button");
-      button.addEventListener('click', event => {
-        bars.classList.toggle('hidden')
-        xmark.classList.toggle('hidden')
-        menu.classList.toggle('translate-x-full')
-      });
-      const cross=document.getElementById("xmark");
-      const tgl_btn=document.getElementById("bars");
-      tgl_btn.addEventListener("click",function(){let body=document.getElementById("body");
-       let menu=document.getElementById("menu")
-      
-       menu.style="margin-top:4rem; color:black; background:white"
-     login_card_div.style=" background:white;margin-top:8rem;transition:height 1s;"
-      })  
-      cross.addEventListener("click",function(){let body=document.getElementById("body");
-            body.style="padding-top:0"
-            let _div=document.getElementById("main-div")
-       login_card_div.style=" background:white;margin-top:5rem;"
-          let menu=document.getElementById("menu")
+  
+ <script>
+  let search_container=document.getElementById("search-container")
+button.addEventListener('click', event => {
+  bars.classList.toggle('hidden')
+  xmark.classList.toggle('hidden')
+  menu.classList.toggle('translate-x-full')
+});
+
+
+const cross=document.getElementById("xmark");
+const tgl_btn=document.getElementById("bars");
+cross.addEventListener("click",function(){
+    
+  search_container.style="margin-top:10rem;"
+  let menu=document.getElementById("menu")
           menu.style="margin-top:0rem;"
           menu.style="margin-top:4rem; color:black; background:white"
-          
+    
 
-          });
-     
+    });
+ tgl_btn.addEventListener("click",function(){
+ search_container.style="margin-top:22rem;"
+ let menu=document.getElementById("menu")
+       menu.style="margin-top:4rem; color:black; background:white"
+})       
 
-    </script>
-
+</script>
 </body></html>
